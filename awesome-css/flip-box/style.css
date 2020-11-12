@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+.flip3d {
+    width: 240px;
+    height: 200px;
+    margin: 10px;
+    float: left;
+}
+.flip3d .front {
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
+    background: url(./background9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 240px;
+    height: 200px;
+    border-radius: 7px;
+    transition:  transform .5s linear 0s;
+    backface-visibility: hidden;
+}
+.flip3d .back {
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background: url(./background7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 240px;
+    height: 200px;
+    border-radius: 7px;
+    transition: transform  .5s linear 0s;
+    backface-visibility: hidden;
+}
+.flip3d:hover .front {
+    transition: transform  .5s linear 0s;
+    transform: perspective(600px) rotateY(-180deg);
+
+}
+.flip3d:hover .back {
+    transition: transform  .5s linear 0s;
+    transform: perspective(600px) rotateY(0deg);
+
+}
